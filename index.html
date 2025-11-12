@@ -5,116 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Currículo - João Gabriel M. Somer</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
+    /* Estilo para replicar visual do seu papel (vertical, margem, fonte simples) */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+    html,body{height:100%;}
+    body{
+      background:#2b2b39;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:30px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* A página imita uma folha impressa centralizada */
+    .paper{
+      width: 800px;          /* largura da "folha" */
+      height: 1120px;       /* altura da "folha" */
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      padding: 36px 48px;
       box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      color:#111;
+      position: relative;
+      transform: rotate(0deg); /* se quiser girar como na imagem, mude para ex: -90deg */
+      overflow: hidden;
     }
 
-    body {
-      background: #0f0f1a;
-      color: #eee;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 40px 20px;
+    /* Cabeçalho com nome grande */
+    .nome{
+      text-align:center;
+      font-weight:700;
+      font-size:32px;
+      margin-bottom:6px;
+    }
+    .subdados{
+      text-align:center;
+      font-size:14px;
+      color:#333;
+      margin-bottom:18px;
     }
 
-    .container {
-      background: #1a1a2e;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
-      max-width: 700px;
-      width: 100%;
-      padding: 40px;
+    .colunas{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 6px;
     }
 
-    h1 {
-      font-size: 28px;
-      color: #8a2be2;
-      text-align: center;
-      margin-bottom: 10px;
+    .box{
+      padding:12px 14px;
+      border:1px solid #e6e6e6;
+      border-radius:6px;
+      background: #fcfcfd;
     }
 
-    .section-title {
-      font-size: 18px;
-      color: #8a2be2;
-      margin-top: 30px;
-      border-bottom: 1px solid #8a2be2;
-      padding-bottom: 5px;
-      text-transform: uppercase;
+    .titulo{
+      font-size:12px;
+      font-weight:600;
+      color:#444;
+      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
     }
 
-    p, li {
-      font-size: 15px;
-      line-height: 1.6;
-      margin-top: 8px;
+    .texto{
+      font-size:15px;
+      color:#111;
+      line-height:1.4;
     }
 
-    ul {
-      list-style: none;
-      margin-top: 8px;
+    .linha-dados{
+      display:flex;
+      justify-content:space-between;
+      margin:6px 0;
+      font-size:15px;
     }
 
-    .contact-info p {
-      margin: 6px 0;
+    .assinatura{
+      margin-top:40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    a {
-      color: #b388ff;
-      text-decoration: none;
+    .assinatura .assin{
+      width:48%;
+      border-top:1px solid #bbb;
+      text-align:center;
+      padding-top:8px;
+      font-size:13px;
+      color:#333;
     }
 
-    a:hover {
-      text-decoration: underline;
+    /* Rodapé com observação breve */
+    .rodape{
+      position:absolute;
+      bottom:18px;
+      left:48px;
+      right:48px;
+      text-align:center;
+      font-size:12px;
+      color:#666;
     }
 
-    .footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 13px;
-      color: #aaa;
+    /* Forçar impressão em página A4 quando for imprimir */
+    @media print{
+      body{background:#fff}
+      .paper{box-shadow:none;}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>João Gabriel M. Somer</h1>
+  <div class="paper">
+    <div class="nome">João Gabriel M. Somer</div>
+    <div class="subdados">joaogabrielsomer@gmail.com • (45) 9 9138-5271 • Cascavel - PR</div>
 
-    <section class="contact-info">
-      <p><b>E-mail:</b> joaogabrielsomer@gmail.com</p>
-      <p><b>Telefone:</b> (45) 9 9138-5271</p>
-      <p><b>Cidade:</b> Cascavel - PR</p>
-    </section>
+    <div class="colunas">
+      <div class="box">
+        <div class="titulo">Dados Pessoais</div>
+        <div class="texto">
+          <div class="linha-dados"><span>Nome:</span><strong>João Gabriel M. Somer</strong></div>
+          <div class="linha-dados"><span>Filiação:</span><strong>—</strong></div>
+          <div class="linha-dados"><span>Naturalidade:</span><strong>Cascavel - PR</strong></div>
+          <div class="linha-dados"><span>Data de Nasc.:</span><strong>--/--/----</strong></div>
+          <div class="linha-dados"><span>RG:</span><strong>—</strong></div>
+          <div class="linha-dados"><span>CPF:</span><strong>000.000.000-00</strong></div>
+        </div>
+      </div>
 
-    <section>
-      <h2 class="section-title">Objetivo</h2>
-      <p>Busco minha primeira oportunidade de trabalho para aplicar meus conhecimentos, aprender com a equipe e contribuir de forma positiva para a empresa.</p>
-    </section>
-
-    <section>
-      <h2 class="section-title">Educação</h2>
-      <ul>
-        <li><b>Ensino Médio:</b> 2º ano – Colégio Estadual Padre Carmelo Perrone</li>
-        <li><b>Curso Técnico:</b> Desenvolvimento de Sistemas (em andamento)</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-title">Experiência Profissional</h2>
-      <p>Sem experiência profissional registrada. Estou motivado a aprender e desenvolver minhas habilidades no ambiente de trabalho.</p>
-    </section>
-
-    <section>
-      <h2 class="section-title">Mensagem</h2>
-      <p>Agradeço pela oportunidade de considerar minha candidatura. Estou ansioso para colaborar e crescer junto à equipe. Obrigado pela atenção!</p>
-    </section>
-
-    <div class="footer">
-      <p>© 2025 João Gabriel M. Somer</p>
+      <div class="box">
+        <div class="titulo">Formação</div>
+        <div class="texto">
+          <p><strong>Ensino Médio</strong> — 2º ano (em andamento)<br>Colégio Estadual Padre Carmelo Perrone</p>
+          <p style="margin-top:8px"><strong>Curso Técnico</strong> — Desenvolvimento de Sistemas (em andamento)</p>
+        </div>
+      </div>
     </div>
+
+    <div style="margin-top:18px" class="box">
+      <div class="titulo">Objetivo</div>
+      <div class="texto">Busco minha primeira oportunidade de trabalho para aplicar meus conhecimentos, aprender com a equipe e contribuir de forma positiva para a empresa.</div>
+    </div>
+
+    <div style="margin-top:14px" class="box">
+      <div class="titulo">Experiência</div>
+      <div class="texto">Sem experiência profissional registrada. Disponível para aprender, trabalhar e assumir responsabilidades.</div>
+    </div>
+
+    <div style="margin-top:14px" class="box">
+      <div class="titulo">Observações</div>
+      <div class="texto">Agradeço pela oportunidade de considerar minha candidatura. Estou à disposição para entrevistas e testes práticos.</div>
+    </div>
+
+    <div class="assinatura">
+      <div class="assin">Assinatura do Candidato</div>
+      <div class="assin">Assinatura do Responsável</div>
+    </div>
+
+    <div class="rodape">Documento gerado a partir do currículo original — visual mantido conforme o material enviado.</div>
   </div>
 </body>
 </html>
